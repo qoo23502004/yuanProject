@@ -51,7 +51,7 @@ def handle_memberJoined(event):
     #tmpToken = event.reply_token
     #newMember = line_bot_api.get_profile(event.source.user_id)
     #profile = line_bot_api.get_profile(event.source.user_id)
-    message=TextMessage(text="歡迎加入大同寶寶麻將切磋群，進來後請詳細閱讀記事本，任何事務與公告都以記事本為主唷^^")
+    message=TextMessage(text="歡迎加入大同寶寶麻將切磋群\n進來後請詳細閱讀記事本\n任何事務與公告都以記事本為主唷^^\n另外如果怕吵的話，可以從右上角選擇關閉提醒")
     line_bot_api.reply_message(event.reply_token, message)
 
 #@handler.add(MemberLeaveEvent)
