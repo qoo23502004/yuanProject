@@ -51,7 +51,7 @@ def handle_memberJoined(event):
     #tmpToken = event.reply_token
     #newMember = line_bot_api.get_profile(event.source.user_id)
     #profile = line_bot_api.get_profile(event.source.user_id)
-    message=TextMessage(text="歡迎加入大同寶寶麻將切磋群\n進來後請詳細閱讀記事本\n任何事務與公告都以記事本為主唷^^\n\n【貼心提醒】\n本群因訊息量較多，如果怕打擾到的話\n可以從右上角選擇關閉提醒")
+    message=TextMessage(text="歡迎加入劉萱63醫師諮詢，新來的朋友們請去記事本五月那篇留下Twitch ID與暱稱^^")
     line_bot_api.reply_message(event.reply_token, message)
 
 #@handler.add(MemberLeaveEvent)
@@ -67,7 +67,7 @@ def handle_memberJoined(event):
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):   
-    #adminID=[""]
+    adminID=["Ue302eb57af67d978f3a5c12055577d55"]
 
     if event.message.text=="!GID":           
         message = TextSendMessage(text=event.source.group_id)
@@ -91,5 +91,5 @@ def handle_message(event):
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
-    
+    app.run(host='0.0.0.0',port=port)
+    #ssl_context='adhoc'
