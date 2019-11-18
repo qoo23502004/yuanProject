@@ -69,7 +69,7 @@ def handle_memberJoined(event):
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):   
-	adminID=["Ue302eb57af67d978f3a5c12055577d55"]
+	adminID=["Ue302eb57af67d978f3a5c12055577d55","U7c06a8fe3179701dbe7a9819be8c9f97","U092027ae94bbfc9542bb1d07aac9fada"]
 	cmdName=""
 	cmdContent=""
 	content=""
