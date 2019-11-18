@@ -65,7 +65,7 @@ def handle_memberJoined(event):
 	#line_bot_api.push_message("C4fe2e6fd176c7822ed60a78d3941aaea", TextSendMessage(text=str(tmpToken)))
 
  
- 
+   
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):   
