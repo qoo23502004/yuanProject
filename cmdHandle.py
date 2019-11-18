@@ -43,7 +43,7 @@ def writeCMD(cmd,content):
 def addCMD(cmdName,cmdContent):
 	check=cmdList()
 	if cmdName not in check:
-		conn = sqlite3.connect('/cmdList.db')
+		conn = sqlite3.connect('/app/cmdList.db')
 		c = conn.cursor()
 		c.execute("INSERT INTO CMDLIST (CMDNAME,CMDCONTENT)  VALUES (?,?)",(cmdName,cmdContent));
 		conn.commit()
@@ -59,7 +59,7 @@ def addCMD(cmdName,cmdContent):
 def deleteCMD(cmdName):
 	check=cmdList()
 	if cmdName in check:
-		conn = sqlite3.connect('/cmdList.db')
+		conn = sqlite3.connect('/app/cmdList.db')
 		c = conn.cursor()
 		#print ("Opened database successfully")
 		c.execute("DELETE from CMDLIST where CMDNAME=(?)",(cmdName,))
@@ -74,7 +74,7 @@ def deleteCMD(cmdName):
 def updateCMD(cmdName,cmdContent):
 	check=cmdList()
 	if cmdName in check:
-		conn = sqlite3.connect('/cmdList.db')
+		conn = sqlite3.connect('/app/cmdList.db')
 		c = conn.cursor()
 		c.execute("UPDATE CMDLIST set CMDCONTENT=? where CMDNAME=?",(cmdContent,cmdName))
 		conn.commit()
@@ -85,7 +85,7 @@ def updateCMD(cmdName,cmdContent):
 
 def cmdList():
 	list=""
-	conn = sqlite3.connect('/cmdList.db')
+	conn = sqlite3.connect('/app/cmdList.db')
 	#print ("Opened database successfully");
 	c = conn.cursor()
 	cursor = c.execute("SELECT CMDNAME, CMDCONTENT from CMDLIST")
@@ -99,7 +99,7 @@ def cmdList():
 def showContent(cmdName):
 	check=cmdList()
 	if cmdName in check:
-		conn = sqlite3.connect('/cmdList.db')
+		conn = sqlite3.connect('/app/cmdList.db')
 		c = conn.cursor()
 		cursor = c.execute("SELECT CMDCONTENT, CMDCONTENT from CMDLIST WHERE CMDNAME=(?)",(cmdName,))	
 		for row in cursor:
